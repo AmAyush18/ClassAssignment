@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question - 10</title>
+</head>
+<body>
+    <h3>Enter Your Password below to check</h3>
+    <input type="password" class="pass">
+    <button class="check">Check</button>
+    <h2 class="result"></h2>
+
+    <script>
+        let ip = document.querySelector(".pass")
+        let check = document.querySelector(".check")
+        let res = document.querySelector(".result")
+
+        check.addEventListener("click", checkPassword)
+
+        function checkPassword(){
+            if(ip.value.length >= 10){
+                res.innerText = "success"
+                res.style.color = "green"
+            }else{
+                res.innerText = "password is short"
+                res.style.color = "red"
+            }
+        }
+
+    </script>
+</body>
+</html>

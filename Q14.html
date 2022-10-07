@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question-14</title>
+  </head>
+  <body>
+    <h3>Enter Person 1 Details</h3>
+    <input type="text" class="name1" placeholder="Enter Your Name here" />
+    <input type="number" class="age1" placeholder="Enter Your Age here" />
+    <input type="text" class="yuga1" placeholder="Enter Yuga here" />
+    <h3>Enter Person 2 Details</h3>
+    <input type="text" class="name2" placeholder="Enter Your Name here" />
+    <input type="number" class="age2" placeholder="Enter Your Age here" />
+    <input type="text" class="yuga2" placeholder="Enter Yuga ere" />
+
+    <br>
+    <br>
+
+    <button class="btn">Check the Oldest</button>
+
+    <h2 class="result"></h2>
+
+    <script>
+      let btn = document.querySelector(".btn");
+      let result = document.querySelector(".result");
+        console.log("hellow page is loaded");
+
+        btn.addEventListener("click", checkOldest);
+
+      function checkOldest() {
+        
+        const obj1 = {
+          name: document.querySelector(".name1").value,
+          age: Number(document.querySelector(".age1").value),
+          yuga: document.querySelector(".yuga1").value
+        };
+
+        const obj2 = {
+          name: document.querySelector(".name2").value,
+          age: Number(document.querySelector(".age2").value),
+          yuga: document.querySelector(".yuga2").value
+        };
+
+        older(obj1, obj2);
+
+        function older(obj1, obj2) {
+          if (obj1.age === obj2.age) {
+            result.innerText = `Both ${obj1.name} & ${obj2.name} are of equal age`;
+          }
+          else if (obj1.age > obj2.age) {
+            result.innerText = `${obj1.name} is older.`;
+          } 
+          else {
+            result.innerText = `${obj2.name} is older.`;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

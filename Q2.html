@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-2</title>
+
+    <style>
+        input{
+            padding: 5px;
+        }
+
+        .btn{
+            border: none;
+            margin: 15px;
+            margin-left: 20px;
+            font-weight: bolder;
+            background-color: rgb(99, 239, 239);
+            color: rgb(54, 5, 5);
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <input type="text" class="ip">
+        <div class="btns">
+            <button class="plus btn">+</button>
+            <button class="minus btn"> &NegativeThickSpace; - &NegativeThickSpace;</button>
+        </div>
+        <div class="result"></div>
+
+
+    </div>
+
+    <script>
+
+        let ip = document.querySelector('.ip')
+        let plus = document.querySelector('.plus')
+        let minus = document.querySelector('.minus')
+        let result = document.querySelector('.result')
+
+        let fontSize = 25
+
+        plus.addEventListener("click", incSize)
+
+        minus.addEventListener("click", decSize)
+
+        // to increase font size
+        function incSize(){
+            fontSize = fontSize + 2
+            result.innerText = ip.value  
+            result.style.fontSize = fontSize+"px"
+        }
+
+        // to decrease font size
+        function decSize(){
+            fontSize = fontSize - 2
+            result.innerText = ip.value  
+            result.style.fontSize = fontSize+"px"
+        }
+
+    </script>
+
+</body>
+</html>

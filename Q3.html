@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-3</title>
+
+    <style>
+
+        body{
+            font-size: 25px;
+            background-color: blue;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <input type="text" id="ip">
+        <button class="btn" id="h1"> H1 </button>
+        <button class="btn" id="h2"> H2 </button>
+        <button class="btn" id="h3"> H3 </button>
+        <div class="result"> <!-- Amritayush --> --> </div>
+    </div>
+
+    <script>
+
+        let ip = document.querySelector("#ip")
+        let h1 = document.querySelector("#h1")
+        let h2 = document.querySelector("#h2")
+        let h3 = document.querySelector("#h3")
+        let res = document.querySelector(".result")
+
+        h1.addEventListener("click", header1)
+
+        h2.addEventListener("click", header2)
+
+        h3.addEventListener("click", header3)
+
+        // for displaying h1
+        function header1(){
+            let result = ip.value
+            res.innerHTML = `<h1> ${result} </h1>`
+        }
+        
+        // for displaying h2
+        function header2(){
+            let result = ip.value
+            res.innerHTML = `<h2> ${result} </h2>`
+        }
+
+        // for displaying h3
+        function header3(){
+            let result = ip.value
+            res.innerHTML = `<h3> ${result} </h3>`
+        }
+
+
+
+    </script>
+
+</body>
+</html>

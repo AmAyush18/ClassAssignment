@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question-16</title>
+  </head>
+  <body>
+    <h3>Enter Person 1 Details</h3>
+    <input type="text" class="name1" placeholder="Enter Name here" />
+    <input type="number" class="age1" placeholder="Enter Power here" />
+    <input type="text" class="yuga1" placeholder="Enter Yuga here" />
+    <h3>Enter Person 2 Details</h3>
+    <input type="text" class="name2" placeholder="Enter Name here" />
+    <input type="number" class="age2" placeholder="Enter Power here" />
+    <input type="text" class="yuga2" placeholder="Enter Yuga ere" />
+
+    <br>
+    <br>
+
+    <button class="btn">Compare</button>
+
+    <h2 class="result"></h2>
+
+    <script>
+      let btn = document.querySelector(".btn");
+      let result = document.querySelector(".result");
+        console.log("hellow page is loaded");
+
+        btn.addEventListener("click", checkOldest);
+
+      function checkOldest() {
+        
+        const obj1 = {
+          name: document.querySelector(".name1").value,
+          power: Number(document.querySelector(".age1").value),
+          yuga: document.querySelector(".yuga1").value
+        };
+
+        const obj2 = {
+          name: document.querySelector(".name2").value,
+          power: Number(document.querySelector(".age2").value),
+          yuga: document.querySelector(".yuga2").value
+        };
+
+        older(obj1, obj2);
+
+        function older(obj1, obj2) {
+            let power1 = obj1.name.length * 35 + obj1.power
+            let power2 = obj2.name.length * 35 + obj2.power
+          if (power1 === obj2.power2) {
+            result.innerText = `Both ${obj1.name} & ${obj2.name} have equal power`;
+          }
+          else if (power1 > power2) {
+            result.innerText = `${obj1.name} is more powerful.`;
+          } 
+          else {
+            result.innerText = `${obj2.name} is more powerful.`;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

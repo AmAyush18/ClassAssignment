@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question-5</title>
+  </head>
+  <body>
+    <h1 class="heading">Fill the details of Person - 1</h1>
+    <input type="text" placeholder="Name" class="name" required />
+    <input type="number" placeholder="Unit Test Marks" class="ut" required />
+    <input type="number" placeholder="Pre Final Marks" class="pre-final" required />
+    <input type="number" placeholder="Final Marks" class="final" required />
+    <button class="Next">Next</button>
+    <h2 class="result"></h2>
+
+    <script>
+      let heading = document.querySelector(".heading");
+      let name = document.querySelector(".name");
+      let ut = document.querySelector(".ut");
+      let preFinal = document.querySelector(".pre-final");
+      let final = document.querySelector(".final");
+      let next = document.querySelector(".Next");
+      let res = document.querySelector(".result");
+
+      let names = [];
+      let utMarks = [];
+      let preFinalMarks = [];
+      let finalMarks = [];
+
+      let count = 0;
+
+      heading.innerText = `Fill Details of Student - ${count + 1}`;
+      next.addEventListener("click", nextClicked);
+
+      // When Next Button is clicked
+      function nextClicked() {
+        if (count < 5) {
+          console.log("Next Clicked");
+          names[count] = name.value;
+          utMarks[count] = Number(ut.value);
+          preFinalMarks[count] = Number(preFinal.value);
+          finalMarks[count] = Number(final.value);
+          console.log(names);
+          count++;
+          heading.innerText = `Fill Details of Student - ${count + 1}`;
+          name.value = "";
+          ut.value = "";
+          preFinal.value = "";
+          final.value = "";
+        }
+
+        if (count >= 5) {
+          displayResult();
+          next.disabled = true;
+        }
+      }
+
+      // When we have five Inputs
+      function displayResult() {
+        let max = 0;
+        let ans = 0;
+        for (var i = 0; i < 5; i++) {
+          avg = Number(utMarks[i] + preFinalMarks[i] + finalMarks[i]) / 3;
+          if (avg > max) {
+            max = avg;
+            ans = i;
+          }
+        }
+        res.innerText = `${names[ans]} has highest average of ${max}`;
+      }
+    </script>
+  </body>
+</html>
