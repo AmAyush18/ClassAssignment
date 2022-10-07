@@ -7,6 +7,30 @@
     <title>Question - 17</title>
 </head>
 <body>
-    <input type="text">
+    <input type="text" class="ip" placeholder="Enter News here">
+    <input type="text" class="src" placeholder="Enter your source">
+    <button class="auth">Authenticate</button>
+    <h2 class="result"></h2>
+
+    <script>
+
+        let ip = document.querySelector(".ip")
+        let src = document.querySelector(".src")
+        let auth = document.querySelector(".auth")
+        let result = document.querySelector(".result")
+
+        auth.addEventListener("click", authenticate)
+
+        function authenticate(){
+            let source = src.value
+            source.toLowerCase()
+            if(source === "facebook" || source == "whatsapp"){
+                result.innerText = "Don't believe things from FB and WhatApp."
+            }else{
+                result.innerText = "It can be trusted"
+            }
+        }
+
+    </script>
 </body>
 </html>
